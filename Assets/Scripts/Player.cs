@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     }
     private void TakeDamage(float damage)
     {
-        if(heal > 0) heal -= damage;
+        if(heal >= 0) heal -= damage;
         else 
         {
             heal = 0;
