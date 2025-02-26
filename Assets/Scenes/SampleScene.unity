@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 130426595}
   - component: {fileID: 130426597}
   - component: {fileID: 130426596}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1231,8 +1231,8 @@ MonoBehaviour:
   _rBSuspension: {fileID: 1698499594}
   _lBSuspension: {fileID: 1207057577}
   Rb: {fileID: 130426594}
-  _suspensionHeight: 3
-  _forceScale: 10
+  _suspensionHeight: 4
+  _forceScale: 15
   _Speed: 100
   _rotationSpeed: 50
 --- !u!114 &130426596
@@ -5622,7 +5622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 631936840}
   - component: {fileID: 631936841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10417,35 +10417,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2061586636}
     m_Modifications:
-    - target: {fileID: 580741618993453868, guid: a90ede86941fe5b4a9aa6451113e3879,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 1723953122851249646, guid: a90ede86941fe5b4a9aa6451113e3879,
         type: 3}
       propertyPath: m_Name
       value: road (one lane) trun large (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1723953122851249646, guid: a90ede86941fe5b4a9aa6451113e3879,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 2064731755621451604, guid: a90ede86941fe5b4a9aa6451113e3879,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7.94907
-      objectReference: {fileID: 0}
-    - target: {fileID: 2064731755621451604, guid: a90ede86941fe5b4a9aa6451113e3879,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 7.94907
-      objectReference: {fileID: 0}
-    - target: {fileID: 2064731755621451604, guid: a90ede86941fe5b4a9aa6451113e3879,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.94907
       objectReference: {fileID: 0}
     - target: {fileID: 2064731755621451604, guid: a90ede86941fe5b4a9aa6451113e3879,
         type: 3}
@@ -10497,15 +10472,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6961578820506209918, guid: a90ede86941fe5b4a9aa6451113e3879,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8091309121881555500, guid: a90ede86941fe5b4a9aa6451113e3879, type: 3}
-    - {fileID: 4675476734211892028, guid: a90ede86941fe5b4a9aa6451113e3879, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90ede86941fe5b4a9aa6451113e3879, type: 3}
@@ -10900,16 +10868,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2395258082485778722, guid: a34469498081c6d4eb36aaf3b4d82959,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7.9490705
-      objectReference: {fileID: 0}
-    - target: {fileID: 2395258082485778722, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.9490705
-      objectReference: {fileID: 0}
-    - target: {fileID: 2395258082485778722, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -135.20378
       objectReference: {fileID: 0}
@@ -10962,21 +10920,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: road (one lane) straight (21)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3059767298681398168, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3861266525169673562, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703241989801668616, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11995,7 +11938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207057577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lBSuspension
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -13715,16 +13658,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2395258082485778722, guid: a34469498081c6d4eb36aaf3b4d82959,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7.9490705
-      objectReference: {fileID: 0}
-    - target: {fileID: 2395258082485778722, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.9490705
-      objectReference: {fileID: 0}
-    - target: {fileID: 2395258082485778722, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 332.76477
       objectReference: {fileID: 0}
@@ -13777,21 +13710,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: road (one lane) straight (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3059767298681398168, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3861266525169673562, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703241989801668616, guid: a34469498081c6d4eb36aaf3b4d82959,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14339,7 +14257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520702792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14557,6 +14475,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 4693825299639907105, guid: 66f97e68ed002b74f8e181d1c3108e14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5840187650872712010, guid: 66f97e68ed002b74f8e181d1c3108e14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14597,10 +14520,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6792740760244198180, guid: 66f97e68ed002b74f8e181d1c3108e14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134596878844850964, guid: 66f97e68ed002b74f8e181d1c3108e14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8160049463398649625, guid: 66f97e68ed002b74f8e181d1c3108e14,
         type: 3}
       propertyPath: m_Name
       value: Taxi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160049463398649625, guid: 66f97e68ed002b74f8e181d1c3108e14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225268088695874782, guid: 66f97e68ed002b74f8e181d1c3108e14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16226,7 +16169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1672761072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lFSuspension
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -16269,7 +16212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1698499594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rBSuspension
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -17606,6 +17549,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1143301002}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1824554625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1824554627}
+  - component: {fileID: 1824554626}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1824554626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824554625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca1339d96d261b4b8da454ee4579e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpBullet: {fileID: 0}
+--- !u!4 &1824554627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824554625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1834304345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19296,7 +19284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2069244233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rFSuspension
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -20268,7 +20256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7847771648669577312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShootPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20392,7 +20380,7 @@ GameObject:
   - component: {fileID: 1649015194862065808}
   - component: {fileID: 7596922361285859144}
   - component: {fileID: 4222175994034150397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCube5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20428,3 +20416,4 @@ SceneRoots:
   - {fileID: 5882117429284073104}
   - {fileID: 2061586636}
   - {fileID: 659689484}
+  - {fileID: 1824554627}

@@ -36,7 +36,7 @@ public class bullet : MonoBehaviour
     public static UnityAction<float> OnHit;
     private void OnCollisionEnter(Collision collision)
     {
-        OnHit?.Invoke(_damage);
+        if(collision.transform.CompareTag("Player")) OnHit?.Invoke(_damage);
         Destroy(this.gameObject);
     }
 

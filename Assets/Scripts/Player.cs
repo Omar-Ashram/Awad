@@ -88,9 +88,9 @@ public class Player : MonoBehaviour
         }
 
         float dist = Vector3.Distance(transform.position, _target.position);
-        if (dist < _shootDistance && _ammo > 0 && Time.time > _lastShootTime && !GameManager.Instance.IsGameOver()) 
+        if (dist < _shootDistance && _ammo > 0 && Time.time > _lastShootTime) 
         {
-            Fire();
+            if (!GameManager.Instance.IsGameOver()) Fire();
         }
     }
 
