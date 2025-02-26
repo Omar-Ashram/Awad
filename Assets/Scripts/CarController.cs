@@ -55,7 +55,7 @@ public class CarController : MonoBehaviour
             Debug.DrawRay(suspensionPos.position, Vector3.down, Color.red);
 
             float upForce = _suspensionHeight - hitInfo.distance;
-            if(GameManager.Instance.IsGameOver()) Rb.AddForce(suspensionPos.up * upForce * _forceScale);
+            if(!GameManager.Instance.IsGameOver()) Rb.AddForce(suspensionPos.up * upForce * _forceScale);
 
 
             Debug.DrawRay(suspensionPos.position, suspensionPos.up * upForce, Color.blue);

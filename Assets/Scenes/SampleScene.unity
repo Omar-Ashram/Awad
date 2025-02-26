@@ -1153,8 +1153,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 130426593}
-  - component: {fileID: 130426595}
   - component: {fileID: 130426594}
+  - component: {fileID: 130426595}
   - component: {fileID: 130426597}
   - component: {fileID: 130426596}
   m_Layer: 0
@@ -1248,6 +1248,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healDelay: 5
+  _healIncress: 0
+  _bulletPrefab: {fileID: 6110808860421727371, guid: 0133cbb46582105438eb26700dfbd2dd,
+    type: 3}
+  _target: {fileID: 395496556}
+  _shootPos: {fileID: 7847771648669577312}
+  _barrel: {fileID: 1520702792}
+  _shootDistance: 100
+  _bulletSpeed: 25
+  _bulletLifeTime: 6
+  _damage: 50
+  _shootRate: 2
 --- !u!114 &130426597
 MonoBehaviour:
   m_ObjectHideFlags: 0
