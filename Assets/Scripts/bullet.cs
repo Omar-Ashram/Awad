@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class bullet : MonoBehaviour
@@ -32,8 +33,10 @@ public class bullet : MonoBehaviour
         chaseTarget();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public static UnityAction<float> OnHit;
+    private void OnCollisionEnter(Collision collision)
     {
+        OnHit?.Invoke(_damage);
         Destroy(this.gameObject);
     }
 

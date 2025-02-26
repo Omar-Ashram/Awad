@@ -8,6 +8,7 @@ TagManager:
   - Coffee
   - Bullet
   - Map
+  - GAS
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
@@ -25,7 +24,7 @@ public class Turret : MonoBehaviour
     {
         _barrel.LookAt(_target);  
 
-        if(Time.time > _lastShootTime) 
+        if(Time.time > _lastShootTime && !GameManager.Instance.IsGameOver()) 
         {
             Fire();
 
