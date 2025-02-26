@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float _healDelay;
-    [SerializeField] float _healIncress;
+    [SerializeField] float _healIncrease;
     [Space]
     [SerializeField] GameObject _bulletPrefab;
     [Space]
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         if (inZone && Time.time > _healTimer) 
         {
             inZone = false;
-            heal += _healIncress;
+            heal += _healIncrease;
             print(heal);
         }
 
