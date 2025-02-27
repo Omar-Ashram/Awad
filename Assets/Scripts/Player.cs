@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,16 +18,27 @@ public class Player : MonoBehaviour
     [SerializeField] float _bulletLifeTime;
     [SerializeField] float _damage;
     [SerializeField] float _shootRate;
+    [SerializeField] AudioClip _shootsound;
+    [Space]
+    [SerializeField] GameObject _hitParticle;
+    [SerializeField] Transform _hitParticlePos;
+    [Space]
+    [SerializeField] AudioClip _healing;
+    [SerializeField] AudioClip _takeItem;
+
+    [SerializeField] List<AudioClip> _hitSound;
+    [SerializeField] List<AudioClip> _dieSound;
 
     float _lastShootTime;
 
-    int _ammo = 5;
+    int _ammo = 0;
 
     float heal = 100;
 
     bool inZone = false;
     float _healTimer;
 
+    AudioSource _audioSource;
     private void OnEnable()
     {
         bullet.OnHit += TakeDamage;
@@ -41,13 +51,22 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _lastShootTime = Time.time + _shootRate;
+        _audioSource = GetComponent<AudioSource>();
     }
     private void TakeDamage(float damage)
     {
-        if(heal >= 0) heal -= damage;
-        else 
+        if (heal > 0) 
+        { 
+            heal -= damage;
+            int i = Random.Range(0, _hitSound.Count);
+            _audioSource.PlayOneShot(_hitSound[i]);
+            Destroy(Instantiate(_hitParticle,_hitParticlePos.position,Quaternion.identity),2f);
+        }
+        else
         {
             heal = 0;
+            int i = Random.Range(0, _dieSound.Count);
+            _audioSource.PlayOneShot(_hitSound[i]);
             GameManager.Instance.EndGame();
         }
         print(heal);
@@ -58,12 +77,16 @@ public class Player : MonoBehaviour
         if (other.transform.CompareTag("Coffee")) 
         {
             _healTimer = Time.time + _healDelay;  
+
             inZone = true;
         }
 
         if (other.transform.CompareTag("Bullet")) 
         {
             _ammo++;
+            float p = Random.Range(1f, 3f);
+            _audioSource.pitch = p;
+            _audioSource.PlayOneShot(_takeItem);
             other.gameObject.SetActive(false);   
         }
 
@@ -84,6 +107,7 @@ public class Player : MonoBehaviour
         {
             inZone = false;
             heal += _healIncrease;
+            _audioSource.PlayOneShot(_healing);
             print(heal);
         }
 
@@ -97,6 +121,7 @@ public class Player : MonoBehaviour
     void Fire()
     {
         _ammo--;
+        _audioSource.PlayOneShot(_shootsound);
         _lastShootTime = Time.time + _shootRate;
         GameObject bullet = Instantiate(_bulletPrefab, _shootPos.position, Quaternion.identity);
         bullet bulletScript = bullet.GetComponent<bullet>();

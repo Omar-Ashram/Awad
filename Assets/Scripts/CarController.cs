@@ -39,7 +39,8 @@ public class CarController : MonoBehaviour
         Suspension(_lFSuspension);
         Suspension(_lBSuspension);
 
-        Rb.AddForce(_carDir.forward * _Speed * v);
+        if (!GameManager.Instance.IsGameOver())
+            Rb.AddForce(_carDir.forward * _Speed * v);
 
 
 
