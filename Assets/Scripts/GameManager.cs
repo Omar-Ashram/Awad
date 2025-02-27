@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float bossCoins;
 
+    [SerializeField] GameObject GameOverMenu;
 
     const string _bestScore = "BestScore";
 
@@ -41,8 +43,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void EndGame() 
+    public void EndGame()
     {
+        GameOverMenu.SetActive(true);
         isGameOver = true;
     }
 
@@ -81,6 +84,13 @@ public class GameManager : MonoBehaviour
     {
         print("game over");
         isGameOver = true;
+
+        GameOverMenu.SetActive(true);
         SetCoins(bossCoins);
+    }
+
+    public void ReStartGame() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

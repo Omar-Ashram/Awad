@@ -56,8 +56,9 @@ public class bullet : MonoBehaviour
         _target = null;
         _rb.constraints = RigidbodyConstraints.FreezeAll;
         bulletBody.SetActive(false);
-        int i = Random.Range(0, _hitSound.Count);
-        _audioSource.PlayOneShot(_hitSound[i]);
+        int i = Random.Range(0, 1);
+        if(_audioSource != null) 
+            _audioSource.PlayOneShot(_hitSound[i]);
         Destroy(this.gameObject,2f);
     }
 

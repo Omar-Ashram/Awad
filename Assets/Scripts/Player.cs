@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -29,6 +30,8 @@ public class Player : MonoBehaviour
     [SerializeField] List<AudioClip> _hitSound;
     [SerializeField] List<AudioClip> _dieSound;
 
+    [SerializeField] TMP_Text _text;
+
     float _lastShootTime;
 
     int _ammo = 0;
@@ -51,6 +54,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _lastShootTime = Time.time + _shootRate;
+        _text.text = "Health: " + heal.ToString();
         _audioSource = GetComponent<AudioSource>();
     }
     private void TakeDamage(float damage)
@@ -58,33 +62,35 @@ public class Player : MonoBehaviour
         if (heal > 0) 
         { 
             heal -= damage;
-            int i = Random.Range(0, _hitSound.Count);
+            int i = Random.Range(0, _hitSound.Count -1);
             _audioSource.PlayOneShot(_hitSound[i]);
             Destroy(Instantiate(_hitParticle,_hitParticlePos.position,Quaternion.identity),2f);
+            _text.text = "Health: " + heal.ToString();
         }
-        else
+
+        if(heal <= 0) 
         {
             heal = 0;
-            int i = Random.Range(0, _dieSound.Count);
+            
+            int i = Random.Range(0, _dieSound.Count -1);
             _audioSource.PlayOneShot(_hitSound[i]);
             GameManager.Instance.EndGame();
         }
-        print(heal);
     }
 
     void OnTriggerEnter(Collider other) 
     {
         if (other.transform.CompareTag("Coffee")) 
         {
-            _healTimer = Time.time + _healDelay;  
-
+            _healTimer = Time.time + _healDelay;
+            
             inZone = true;
         }
 
         if (other.transform.CompareTag("Bullet")) 
         {
             _ammo++;
-            float p = Random.Range(1f, 3f);
+            float p = Random.Range(1f, 1.6f);
             _audioSource.pitch = p;
             _audioSource.PlayOneShot(_takeItem);
             other.gameObject.SetActive(false);   
@@ -107,8 +113,9 @@ public class Player : MonoBehaviour
         {
             inZone = false;
             heal += _healIncrease;
+            _text.text = "Health: " + heal.ToString();
             _audioSource.PlayOneShot(_healing);
-            print(heal);
+            
         }
 
         float dist = Vector3.Distance(transform.position, _target.position);
